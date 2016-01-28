@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "管理 NPM 的 NVM"
+date:   2016-01-19 15:00:00
+categories: jekyll update
+---
+
+###筆記
+
+1.安裝
+
+
+
+###資料

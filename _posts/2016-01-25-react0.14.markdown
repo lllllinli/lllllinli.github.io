@@ -1,0 +1,37 @@
+---
+layout: post
+title:  "ReactJs 0.14"
+date:   2016-01-26 15:00:00
+categories: jekyll update
+---
+
+使用 ES7
+
+####初始化
+
+差異：
+
+把 React 所產生的  Dom 物件，抽離瀏覽器物件。
+
+React Dom
+
+
+```
+import React from 'react';
+impore ReactDom from 'react-dom';
+
+const MyComponent = React.createClass({
+  render: function() {
+    return <div>Hello World</div>;
+  }
+});
+
+ReactDOM.render(<MyComponent />, node);
+```
+
+
+####react 
+
+
+
+###資料
