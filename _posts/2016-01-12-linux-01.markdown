@@ -1,0 +1,323 @@
+---
+layout: post
+title:  "Linux(00) - 開始"
+date:   2016-01-12 15:00:00
+categories: jekyll update
+---
+
+###跟著 The New Boston 學習 Linux
+
+[Linux Tutorial for Beginners Playlist](https://www.youtube.com/playlist?list=PL6gx4Cwl9DGCkg2uj3PxUWhMDuTw3VKjM)
+
+生為前端工程師，在 web 工程 的領域上，一直有幾個技術樹想學習。
+
+1.圖形演算法 2D 3D
+
+2.Linux 操作 機器的架構
+
+3.資料庫 SQL NoSQL
+
+4.學習完整的一個後端程式
+
+好不容易有了一個工作上的空擋。跟自自己最喜歡的程式學習網站，學習 Linux 的指令和基礎概念。
+
+
+------------
+
+
+###下指令
+
+```
+$command [option] [arguments]
+```
+
+
+###系統
+
+1.Mac os x 進入系統身份
+
+```
+$sudo -s
+```
+
+2. os 系統架構 [```uname```]
+
+```
+$uname -v
+```
+
+3.系統時間 [```date```]
+ 
+```
+$date
+```
+
+4.目前使用者 [```whoami```]
+
+```
+$whoami
+```
+
+5.指令錯誤的輸出
+
+```
+指令：command not found
+```
+
+6.注意
+
+    - 指令幾乎是小寫。
+    
+
+
+7.輸出到命令列 [```echo```]
+
+```
+$NAMW=LINLI
+#宣告變數
+$echo ＄NAME
+```
+
+8.指令輸出寫入某檔案 [```>```] [```>>```]
+
+```
+$[command] > [filename]
+#複寫
+$[command] >> [filename]
+#持續寫入
+```
+
+###系統狀態
+
+1.目前正在執行的程序 [```ps```]
+
+```
+ps -A 
+#列出全部全部
+```
+
+[註](http://jashliao.pixnet.net/blog/post/165105774-%E6%AF%8F%E5%A4%A9%E4%B8%80%E5%80%8Blinux%E6%8C%87%E4%BB%A4--ps-%E6%8C%87%E4%BB%A4(%E5%88%97%E5%87%BA%E7%B3%BB%E7%B5%B1%E4%B8%AD%E7%95%B6%E5%89%8D%E9%81%8B)
+
+2.檔案權限設定 [```chmod```] [```chown```] [```chgrp```]
+
+
+```
+$chmod 777 [filename]
+$chmod [-cfvR] [u,g,o,a]  [+,-,=]  [r,w,x] [filename or directory]
+
+
+
+
+
+```
+
+
+
+3.添加使用者
+
+4.添加群組
+
+5.
+
+
+###檔案資料夾
+
+1.目前路徑 [```pwd```]
+
+```
+$pwd
+```
+
+2.前往路徑 [```cd```]
+
+```
+$cd 
+$cd ..
+$cd ~/
+```
+
+3.列出目錄檔案 [```ls```]
+
+```
+$ls
+$ls -a  directory
+$ls -la
+$ls -F
+```
+
+4.查看檔案 [```cat```] [```tac```] [```nl```] [```more```] [```less```] [```head```] [```tail```]
+
+```
+$cat file file 
+##可以一次看多個檔案
+$cat -n [filename]
+#查看檔案，同時列出行號
+
+$nl [filename]
+#查看檔案，列出行號，但是空白除外。
+
+$tac file
+#查看檔案反序
+
+$more [filename]
+# 空白鍵，下一頁。[b key] 回上一頁。
+# [q key] 離開閱讀 
+
+$less [filename]
+# 空白鍵，下一頁。[b key] 回上一頁。
+# [q key] 離開閱讀 
+
+$head -n 5 [filename]
+# 查詢檔案，前5行 
+# -c  byt -f 持續更新的檔案
+
+$tail -n 5 [filename]
+# 查詢檔案，後5行
+
+
+```
+
+5.建立資料夾  [```mkdir```]
+
+```
+$mkdir
+```
+
+6.建立檔案 [```touch```]
+
+```
+$touch [filename] 
+#可以一次產生多個檔案
+```
+
+7.刪除資料夾 [```rmdir```]
+
+```
+$rmdir
+```
+
+8.刪除檔案 [```rm```]
+
+```
+$rm [filename]
+$rm directory/*
+#刪除檔案夾下所有檔案
+$rm -rfi  強制刪除 file
+
+```
+
+9.複製檔案
+
+```
+$cp [filename] [new-filename]
+```
+
+10.移動檔案(修改檔名)
+
+```
+$mv [path/filename] [path/new-filename]
+$mv [old-filename] [new-filename]
+```
+
+
+11.修改檔案屬性 [```chattr```]
+
+用途，設定讓檔案不可刪除
+
+```
+$sudo chattr ＋i [filename]
+#基本設定 替檔案添加 i（immutable) 屬性 
+$sudo chattr -i [filename]
+#基本設定 替檔案刪除 i（immutable) 屬性 
+$lsatt [filename]
+#查看檔案屬性
+$chattr -R +i [directory]
+#替整個檔案添加 i(immutable) 屬性
+
+```
+
+[註](http://blog.gtwang.org/linux/how-to-make-file-immutable-on-linux-chattr-command/)
+
+    
+12.列出曾經使用過的歷史指令 [```history```]
+
+```
+$history
+```
+
+在term 按下 ctrl + R  加關鍵字，可以進行模糊比對。
+如果不是第一筆，繼續按 ctrl + R 。
+
+[注](http://blogger.gtwang.org/2013/10/mastering-linux-command-line-history.html)
+
+
+13.查看檔案的大小字數行數 [```wc```]
+
+```
+$wc [filename]
+＃行數 字數 大小 byt
+$ls -l | wc -l
+#資料夾下共有幾個 檔案＋檔案夾
+```
+
+14.顯示檔案編碼，副檔名 [```file```]
+
+```
+$file [filename]
+```
+
+15.遠端複製檔案 [```rcp```]
+
+```
+$rcp 
+```
+
+16.製作捷徑檔 [```ln```]
+
+```
+$ln [path] [path]
+$ln [filename] [filename]
+```
+
+
+###檔案搜尋
+
+1.收尋檔案中的字串
+
+```
+$grep 字元 [file]
+$grep -n 字元 [file]
+# -n 添加行號
+```
+
+2.比較兩個檔案的差異
+
+```
+diff [file] [file]
+```
+
+3.尋找檔案或資料夾 [```find```]
+
+```
+$find [filename] or [directory]
+$find *t*
+#可以使用 * 做模糊比對
+
+```
+
+4.比較檔案、資料夾內容格式 [```cmp```]  [```dircmp```]
+
+
+```
+$cmp [filename] [filename]
+
+```
+
+###資源
+
+1.維基教學：Unix：Mac OS X 。 [link](https://zh.wikibooks.org/zh-tw/Unix%EF%BC%9AMac_OS_X)
+
+2.柏青哥的 SUSE LINUX 。[Link](http://www.suse.url.tw/sles10/index.htm)
+
+
+
