@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Linux(00) - 開始"
+title:  "Linux(00) - start"
 date:   2016-01-12 15:00:00
 categories: jekyll update
 ---
@@ -29,6 +29,7 @@ categories: jekyll update
 
 ```
 $command [option] [arguments]
+#指令名稱  [指令的其他選項]  [參數]
 ```
 
 
@@ -36,17 +37,23 @@ $command [option] [arguments]
 
 1.Mac os x 進入系統身份
 
+
 ```
 $sudo -s
+#進入 root 身份
+$sudo su
+#臨時進入 root
 ```
 
 2. os 系統架構 [```uname```]
+
 
 ```
 $uname -v
 ```
 
 3.系統時間 [```date```]
+
  
 ```
 $date
@@ -54,11 +61,13 @@ $date
 
 4.目前使用者 [```whoami```]
 
+
 ```
 $whoami
 ```
 
 5.指令錯誤的輸出
+
 
 ```
 指令：command not found
@@ -72,6 +81,7 @@ $whoami
 
 7.輸出到命令列 [```echo```]
 
+
 ```
 $NAMW=LINLI
 #宣告變數
@@ -80,6 +90,7 @@ $echo ＄NAME
 
 8.指令輸出寫入某檔案 [```>```] [```>>```]
 
+
 ```
 $[command] > [filename]
 #複寫
@@ -87,16 +98,60 @@ $[command] >> [filename]
 #持續寫入
 ```
 
+
+9.離開 term [```exit```]
+
+
+```
+$exit
+```
+
+10.Mac 開啟應用程式 [```open```]
+
+
+```
+$cd /Applications
+$open app
+
+```
+
+11.關機 [```shutdown```] [```halt```] [```poweroff```]
+
+
+```
+$shutdown -h now
+#關機
+$shutdown -r now
+#重新開機
+
+
+$halt 
+$poweroff
+#強制關機
+
+```
+
+12.開啟當前目錄 [```open .```]
+
+
+```
+$cd [path]
+$open .
+
+```
+
+
 ###系統狀態
 
 1.目前正在執行的程序 [```ps```]
+
 
 ```
 ps -A 
 #列出全部全部
 ```
 
-[註](http://jashliao.pixnet.net/blog/post/165105774-%E6%AF%8F%E5%A4%A9%E4%B8%80%E5%80%8Blinux%E6%8C%87%E4%BB%A4--ps-%E6%8C%87%E4%BB%A4(%E5%88%97%E5%87%BA%E7%B3%BB%E7%B5%B1%E4%B8%AD%E7%95%B6%E5%89%8D%E9%81%8B)
+
 
 2.檔案權限設定 [```chmod```] [```chown```] [```chgrp```]
 
@@ -104,20 +159,14 @@ ps -A
 ```
 $chmod 777 [filename]
 $chmod [-cfvR] [u,g,o,a]  [+,-,=]  [r,w,x] [filename or directory]
-
-
-
-
+#[-cfvR] 是 option 只要記住 -R
 
 ```
 
+[註](http://benjr.tw/162)
 
 
-3.添加使用者
 
-4.添加群組
-
-5.
 
 
 ###檔案資料夾
@@ -222,19 +271,23 @@ $mv [old-filename] [new-filename]
 
 11.修改檔案屬性 [```chattr```]
 
-用途，設定讓檔案不可刪除
 
 ```
 $sudo chattr ＋i [filename]
-#基本設定 替檔案添加 i（immutable) 屬性 
-$sudo chattr -i [filename]
-#基本設定 替檔案刪除 i（immutable) 屬性 
-$lsatt [filename]
-#查看檔案屬性
-$chattr -R +i [directory]
-#替整個檔案添加 i(immutable) 屬性
+//基本設定 替檔案添加 i（immutable) 屬性 
 
+$sudo chattr -i [filename]
+//基本設定 替檔案刪除 i（immutable) 屬性 
+
+$lsatt [filename]
+//查看檔案屬性
+
+$chattr -R +i [directory]
+//替整個檔案添加 i(immutable) 屬性
 ```
+
+
+
 
 [註](http://blog.gtwang.org/linux/how-to-make-file-immutable-on-linux-chattr-command/)
 
@@ -279,6 +332,15 @@ $ln [path] [path]
 $ln [filename] [filename]
 ```
 
+17.文件資訊 [```file```] [```directory```]
+
+
+```
+$file [filename] [directory]
+```
+
+
+
 
 ###檔案搜尋
 
@@ -313,11 +375,43 @@ $cmp [filename] [filename]
 
 ```
 
+5.收尋原生指令的位址 [```whereis```] [```which```]
+
+
+
+```
+$whereis [指令]
+# 會收尋 /user/bin
+# Mac 系統有關指令放在 /sbin/ 
+# Mac 一般指令 /usr/bin/
+
+$which [指令]
+#據說收尋範圍比較小
+```
+
+6.在 linux 內建檔案資料資料庫 /var/db/locate.database 的檔案收尋 [```locate```]
+
+
+```
+$locate [關鍵茲]
+# 不經過硬碟所以搜尋速度比較快
+
+```
+
+
+
+###檔案壓縮
+
+1.壓縮檔案 [```zip```]
+
+
+
 ###資源
 
 1.維基教學：Unix：Mac OS X 。 [link](https://zh.wikibooks.org/zh-tw/Unix%EF%BC%9AMac_OS_X)
 
 2.柏青哥的 SUSE LINUX 。[Link](http://www.suse.url.tw/sles10/index.htm)
+
 
 
 

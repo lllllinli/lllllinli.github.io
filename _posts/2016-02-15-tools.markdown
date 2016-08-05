@@ -1,0 +1,28 @@
+---
+layout: post
+title:  "環境、工具"
+date:   2016-02-15 15:00:00
+categories: jekyll update
+---
+
+1.homebrew (Link)[http://brew.sh/]
+
+Mac OSX 套件管理工具
+
+2.iterm2
+
+3.npm
+
+
+
+
+
+
+
+
+
+
+
+
+
+###資料
